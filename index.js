@@ -1,8 +1,6 @@
 const https = require('https');
 const express = require('express');
 const path = require('path');
-const fs = require('fs');
-const querystring = require('querystring');
 
 const { Configuration, OpenAIApi } = require('openai');
 const OPENAI_KEY = process.env.OPENAI_KEY;
@@ -18,6 +16,9 @@ const openai = new OpenAIApi(configuration);
 const app = express();
 app.use(express.json());
 
+app.get('/', (req, res) => {
+	res.sendFile(path.join(__dirname, 'index.html'));
+  });
 
 async function getChatCompletion(prompt) {
 	// let model = "text-davinci-003"
@@ -171,10 +172,10 @@ app.get('/link', async (req, res) => {
 	try {
 		let url = req.query["url"]
 		// const body = req.body;
-
+		res.send('Yo! - ' + url)
 		// let { post, topcomments, txt } = await getData(body.url.split("?")[0]);
 		// return { post, topcomments, txt }
-		return url
+		// return url
 	} catch (error) {
 		console.log(error)
 		return error
