@@ -169,12 +169,15 @@ app.post('/link', async (req, res) => {
 app.get('/link', async (req, res) => {
 
 	try {
-		const body = req.body;
+		let url = req.query["url"]
+		// const body = req.body;
 
-		let { post, topcomments, txt } = await getData(body.url.split("?")[0]);
-		return { post, topcomments, txt }
+		// let { post, topcomments, txt } = await getData(body.url.split("?")[0]);
+		// return { post, topcomments, txt }
+		return url
 	} catch (error) {
 		console.log(error)
+		return error
 	}
 
 	// res.send('Yo!')
