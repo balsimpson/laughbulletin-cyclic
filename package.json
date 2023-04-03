@@ -1,0 +1,24 @@
+{
+  "name": "whatsapp-chatgpt-bot",
+  "version": "1.0.0",
+  "description": "A whatsapp Bot to interact with ChatGPT using the OpenAi's API, deployed on cyclic.app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/balsimpson/whatsapp-chatgpt-bot.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/balsimpson/whatsapp-chatgpt-bot/issues"
+  },
+  "homepage": "https://github.com/balsimpson/whatsapp-chatgpt-bot#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "openai": "^3.1.0",
+    "newspaperjs": "^1.0.8"
+  }
+}
