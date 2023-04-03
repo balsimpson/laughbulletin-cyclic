@@ -166,6 +166,21 @@ app.post('/link', async (req, res) => {
 	res.sendStatus(200);
 });
 
+app.get('/link', async (req, res) => {
+
+	try {
+		const body = req.body;
+
+		let { post, topcomments, txt } = await getData(body.url.split("?")[0]);
+		return { post, topcomments, txt }
+	} catch (error) {
+		console.log(error)
+	}
+
+	// res.send('Yo!')
+	res.sendStatus(200);
+});
+
 app.listen(3000, () => {
 	console.log('Server listening on port 3000');
 });
