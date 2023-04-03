@@ -182,9 +182,9 @@ app.get('/link', async (req, res) => {
 	}
 
 	// res.send('Yo!')
-	res.sendStatus(200);
+	// res.sendStatus(200);
 });
 
-app.listen(3000, () => {
+app.listen(3012, () => {
 	console.log('Server listening on port 3000');
 });
